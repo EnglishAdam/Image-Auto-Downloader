@@ -1,0 +1,11 @@
+{
+  "name": "image-auto-downloader",
+  "version": "1.0.0",
+  "description": "Small script which downloads and saves images to file",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js"
+  },
+  "author": "Adam English",
+  "license": "UNLICENSED"
+}

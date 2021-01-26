@@ -102,3 +102,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+#Images
+*.jpg
+1280x720/*
+512x512/*
