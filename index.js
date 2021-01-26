@@ -1,6 +1,7 @@
 // Required modules
 const https = require('https')
-const fs = require('fs')
+const fs = require('fs');
+const { Console } = require('console');
 
 /**
  * Saves a file at a url to a set path, must ensure folder exists before hand
@@ -29,11 +30,12 @@ function saveFile(path, url) {
 }
 
 // Number of images
-const count = 10 
+const count = 100 
 
 // For each count fetches small and large image from picsum and stores it
 for (let index = 0; index < count; index++) {
+  console.log('Fetching files --', index)
   saveFile(`512x512/${index}.jpg`, 'https://picsum.photos/512/512')
   saveFile(`1280x720/${index}.jpg`, 'https://picsum.photos/1280/720')
 }
-
+console.log('Complete')
