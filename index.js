@@ -1,5 +1,5 @@
 // Required modules
-const https = require('https')
+const https = require('https');
 const fs = require('fs');
 const { Console } = require('console');
 
@@ -20,22 +20,22 @@ function saveFile(path, url) {
       https.get(headers.location, (res) => {
         // Store into the file
         res.pipe(file);
-      }).on('error', (e) => console.error(e))
+      }).on('error', (e) => console.error(e));
     } else {
       // Else, if the url is directly to the resouce
       // Store into the file
       res.pipe(file);
     }
-  }).on('error', (e) => console.error(e))
+  }).on('error', (e) => console.error(e));
 }
 
 // Number of images
-const count = 100 
+const count = 100;
 
 // For each count fetches small and large image from picsum and stores it
 for (let index = 0; index < count; index++) {
-  console.log('Fetching files --', index)
-  saveFile(`512x512/${index}.jpg`, 'https://picsum.photos/512/512')
-  saveFile(`1280x720/${index}.jpg`, 'https://picsum.photos/1280/720')
+  console.log('Fetching files --', index);
+  saveFile(`512x512/${index}.jpg`, 'https://picsum.photos/512/512');
+  saveFile(`1280x720/${index}.jpg`, 'https://picsum.photos/1280/720');
 }
-console.log('Complete')
+console.log('Complete');
